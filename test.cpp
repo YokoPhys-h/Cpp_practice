@@ -16,7 +16,9 @@ using namespace std;
 
 int main()
 {
-    cout << "test" << endl;
+    int a, b;
 
-   return 0;
+    cin >> a >> b;
+    cout << (a < b ? b-a: a-b);
+    return 0;
 }
