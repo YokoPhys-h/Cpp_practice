@@ -1,0 +1,3 @@
+stand(数字) : 乱数の種類を用いる
+time(NULL) : 現在の時刻を基準とした乱数の種を作る
+-> stand(time(NULL))
