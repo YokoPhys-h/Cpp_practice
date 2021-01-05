@@ -1,6 +1,6 @@
 /**
 *    author:  Haruto Yokoyama
-*    created: 2021/01/04 19:13:40
+*    created: 2021/01/05 16:55:02
 **/
 
 #define _USE_MATH_DEFINES
@@ -16,9 +16,17 @@ using namespace std;
 
 int main()
 {
-    int a, b;
+    int i;
+    int j;
 
-    cin >> a >> b;
-    cout << (a < b ? b-a: a-b);
-    return 0;
+    for (int i = 1; i <=9; i++)
+    {
+        for (int j = 1; j <= 9; j++)
+        {
+            cout << setw(3) << i*j;
+        }
+        cout << "\n";
+    }
+
+   return 0;
 }
