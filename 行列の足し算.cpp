@@ -1,6 +1,6 @@
 /**
 *    author:  Haruto Yokoyama
-*    created: 2021/01/05 16:55:02
+*    created: 2021/01/06 16:55:02
 **/
 
 #define _USE_MATH_DEFINES
@@ -31,9 +31,9 @@ int main()
     vector<vector<int> > c(k, vector<int>(l));
 
     cout << "行列aの値を入力\n";
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < k; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < l; j++)
         {
             cout << "a[" << i << "][" << j << "]は:";
             cin >> a[i][j];
@@ -41,18 +41,18 @@ int main()
     }
 
     cout << "行列a\n";
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < k; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < l; j++)
         {
             cout << setw(3) << a[i][j];
         }
         cout << "\n";
     }
         cout << "行列bの値を入力\n";
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < k; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < l; j++)
         {
             cout << "b[" << i << "][" << j << "]は:";
             cin >> b[i][j];
@@ -60,9 +60,9 @@ int main()
     }
 
     cout << "行列b \n";
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < k; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < l; j++)
         {
             cout << setw(3) << b[i][j];
         }
@@ -71,9 +71,9 @@ int main()
 
     cout << "\n";
     cout << "足し算a+bの結果は \n";
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < k; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < l; j++)
         {
             c[i][j] = a[i][j] + b[i][j];
             cout << setw(3) << c[i][j];
