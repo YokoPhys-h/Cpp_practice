@@ -7,3 +7,5 @@ vector<vector<要素の型>> 変数名(要素数1, vector<要素の型>(要素�
 変数名.at(i).at(j)でi行目j列目へアクセスできる
 変数名.size()で縦の大きさを取得できる
 変数名.at(0).size()で横の大きさを取得できる
+
+g++ -fexec-charset=CP932 test.cpp
