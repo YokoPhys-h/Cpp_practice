@@ -1,6 +1,6 @@
 /**
 *    author:  Haruto Yokoyama
-*    created: 2021/02/02 15:06:42
+*    created: 2021/02/02 23:06:32
 **/
 
 #define _USE_MATH_DEFINES
@@ -14,21 +14,46 @@
 #include <cmath>
 #include <vector>
 #include <typeinfo>
-
 using namespace std;
 
 int main()
 {
-    vector<vector<double>> A = {{1, 2, 3}, {1, 2, 3}};
-    cout << "行列A\n";
-    for (int i = 0; i < 2; i++)
+    double f;
+    double x, y;
+    ofstream ofs("data.txt");
+    if (!ofs)
     {
-        for (int j = 0; j < 3; j++)
-        {
-            cout << setw(3) << A[i][j];
-        }
-        cout << "\n";
+        cout << "出力ファイルをオープンできません\n";
+        return 1;
     }
+
+    cout << "x"
+         << " "
+         << "y"
+         << " "
+         << "f(x,y)"
+         << "\n";
+
+    ofs << "x"
+        << " "
+        << "y"
+        << " "
+        << "f(x,y)"
+        << "\n";
+
+    for (double i = -10; i <= 10; i++)
+    {
+        for (double j = -10; j <= 10; j++)
+        {
+            x = i;
+            y = j;
+            f = exp(-x * x) * exp(-y * y);
+            cout << x << " " << y << " " << f << "\n";
+            ofs << x << " " << y << " " << f << "\n";
+        }
+    }
+
+    ofs.close();
 
     return 0;
 }
