@@ -14,46 +14,40 @@
 #include <cmath>
 #include <vector>
 #include <typeinfo>
+
+#include "VecD3.h"
+
 using namespace std;
-
-struct vec3
-{
-    double x, y, z;
-};
-
-vec3 set(double x, double y, double z)
-{
-    vec3 v;
-    v.x = x;
-    v.y = y;
-    v.z = z;
-    return v;
-}
-
-void show(const vec3 &v)
-{
-    cout << "(" << v.x << "," << v.y << "," << v.z << ")\n";
-}
-
-vec3 add(const vec3 &v1, const vec3 &v2)
-{
-    vec3 u;
-    u.x = v1.x + v2.x;
-    u.y = v1.y + v2.y;
-    u.z = v1.z + v2.z;
-    return u;
-}
 
 int main()
 {
-    vec3 v1, v2;
-    v1 = set(3, 4, 5);
-    v2 = set(3, 2, 1);
-    show(v1);
-    show(v2);
+    VecD3 v1(3.0, 4.0, 5.0), v2(3.0, 2.0, 1.0);
 
-    vec3 v;
-    v = add(v1, v2);
-    show(v);
+    cout << "&v1=" << &v1 << "\n";
+    cout << "v1=";
+    v1.show();
+    cout << "v2=";
+    v2.show();
+
+    VecD3 v3;
+
+    v3 = v1.add(v2);
+    cout << "v1+v2=";
+    v3.show();
+
+    VecD3 v4;
+    v4 = v1.diff(v2);
+    cout << "v1-v2=";
+    v4.show();
+
+    VecD3 v5;
+    v5 = v1.scalar_time(2);
+    cout << "2*v2=";
+    v5.show();
+
+    double v6;
+    v6 = v1.size();
+    cout << "abs(v1)=" << v6;
+
     return 0;
 }
