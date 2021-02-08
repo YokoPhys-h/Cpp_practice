@@ -16,7 +16,7 @@ set mytics
 
 
 
-splot "data.txt" using 1:2:3 with points pointtype 7 lc 1 title "Data"
+plot "data.txt" using 1:2 with points pointtype 7 lc 1 title "Data"
 
 
 set terminal windows

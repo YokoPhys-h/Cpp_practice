@@ -1,6 +1,6 @@
-stand(数字) : 乱数の種類を用いる
+srand(数字) : 乱数の種類を用いる
 time(NULL) : 現在の時刻を基準とした乱数の種を作る
--> stand(time(NULL))
+-> srand(time(NULL))
 
 vector<vector<要素の型>> 変数名(行数, vector<要素の型>(列数, 初期値))で宣言できる
 初期値は省略可能
