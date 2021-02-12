@@ -14,7 +14,7 @@ using namespace std;
 double func(double x)
 {
     double y;
-    y = x * x - 4;
+    y = x * x * x - 4;
 
     return y;
 }
