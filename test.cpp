@@ -1,6 +1,6 @@
 /**
 *    author:  Haruto Yokoyama
-*    created: 2021/02/08 16:09:49
+*    created: 2021/02/13 21:30:35
 **/
 
 #define _USE_MATH_DEFINES
@@ -21,41 +21,22 @@ using namespace std;
 
 int main()
 {
-    /*二分法*/
-    double xl, xr;
-    double xc;
-    double error;
-    double condition1, condition2;
+    /*ニュートンラフソン法*/
 
-    //initial value
-    xl = 0.;    //left
-    xr = 10.;   //right
-    error = 1.; //error_initial
+    double error = 1.;
+    double xp, xs;
 
-    while (error > 0.0001)
+    xp = 10.; //初期値
+
+    while (error > 0.00000001)
     {
-        xc = (xr + xl) / 2.;              //center
-        condition1 = func(xc) * func(xl); //left*center
-        condition2 = func(xc) * func(xr); //right*center
+        xp = xs;
+        xs = xp - func(xp) / funcd(xp);
+        error = abs(xs - xp);
 
-        if (condition1 < 0)
-        {
-            xr = xc;
-        }
-        else if (condition2 < 0)
-        {
-            xl = xc;
-        }
-        else
-        {
-            cout << "initial value error!\n";
-            break;
-        }
-        error = fabs(xr - xl);
-        cout << xc << "\n";
+        cout << setprecision(10);
+        cout << xs << "\n";
     }
-
-    cout << "x=" << xc;
 
     return 0;
 }
