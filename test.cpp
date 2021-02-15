@@ -26,7 +26,7 @@ int main()
     double error = 1.;
     double xp, xs;
 
-    xp = 10.; //初期値
+    xp = 20.; //初期値
 
     while (error > 0.00000001)
     {
